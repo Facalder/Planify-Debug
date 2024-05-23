@@ -9,7 +9,7 @@ type Task_Model struct {
 	Id          int
 	Name        string
 	Description string
-	Priority    int
+	Priority    string  // low, med, high
 	Status      string  // completed, not-completed
 	Cost        float64 // task expected cost
 	Notes       string

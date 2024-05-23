@@ -21,7 +21,11 @@ const (
 )
 
 var (
-	ChooseMenu int
+	ChooseMenu string // E - Exit, B - Back
 
 	NArray int = 1
+
+	IsLogin bool = false
+
+	IsRegistered bool = false
 )
