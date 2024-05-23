@@ -1,7 +1,7 @@
 package global
 
 const (
-	NMAX int = 30
+	NMAX int = 40
 
 	InitAppDuration int = 5
 
