@@ -7,6 +7,10 @@ const (
 
 	LoadingDuration int = 1
 
+	ValidatingDuration int = 3
+
+	RegisteringDuration int = 3
+
 	SaveDataDuration int = 3
 
 	GetAllDataDuration int = 3
