@@ -36,7 +36,9 @@ func ManageTaskCost() {
 
 		case "4":
 
-		case "10":
+		case "5":
+
+		case "6":
 
 		case "B":
 			components.Loader(global.LoadingDuration, "Leaving Manage Task Menu....", func() {

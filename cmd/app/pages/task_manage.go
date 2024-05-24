@@ -10,7 +10,7 @@ import (
 )
 
 func ManageTask(menu func()) {
-	components.TerminalHeaderSection(putils.CenterText("Welcome to Manage Task (Admin) Menu!, \n" +
+	components.TerminalHeaderSection(putils.CenterText("Welcome to Manage Task Menu!, \n" +
 		"Manage Your Employees to Work Harder, and Harder!"))
 
 	for {
@@ -22,11 +22,12 @@ func ManageTask(menu func()) {
 		pterm.DefaultBasicText.Println("(5) - Show Only Task by Deadline")
 		pterm.DefaultBasicText.Println("(6) - Show Only Task by Priority")
 		pterm.DefaultBasicText.Println("(7) - Show Only Task by Category")
-		pterm.DefaultBasicText.Println("(8) - Edit Data Task")
-		pterm.DefaultBasicText.Println("(9) - Remove Data Task")
+		pterm.DefaultBasicText.Println("(8) - Search Available Task by Name")
+		pterm.DefaultBasicText.Println("(9) - Edit Data Task")
+		pterm.DefaultBasicText.Println("(10) - Remove Data Task")
 
 		pterm.DefaultSection.Println("Others Task Commands")
-		pterm.DefaultBasicText.Println("(10) - Manage Task Cost")
+		pterm.DefaultBasicText.Println("(TS) - Manage Task Cost")
 
 		pterm.DefaultSection.Println("Others Available Commands?")
 		pterm.DefaultBasicText.Println("(B) - Back")
@@ -41,10 +42,22 @@ func ManageTask(menu func()) {
 		case "2":
 			controller.ShowAllTask(models.Tasks, models.NTask)
 		case "3":
-
+			controller.ShowAllTaskByASC(models.Tasks, models.NTask)
 		case "4":
+			controller.ShowAllTaskByDSC(models.Tasks, models.NTask)
+		case "5":
 
+		case "6":
+			controller.ShowAllTaskByPriority(models.Tasks, models.NTask)
+		case "7":
+			controller.ShowAllTaskByCategory(models.Tasks, models.NTask)
+		case "8":
+			controller.SearchTaskByName(&models.Tasks, &models.NTask)
+		case "9":
+			controller.EditByIdTask(&models.Tasks, models.NTask)
 		case "10":
+			controller.DeleteByIdTask(&models.Tasks, &models.NTask)
+		case "TS":
 			components.Loader(global.LoadingDuration, "Loading...", func() {
 				ManageTaskCost()
 			})
