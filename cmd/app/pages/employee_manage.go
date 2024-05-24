@@ -20,7 +20,7 @@ func ManageEmployee(menu func()) {
 		pterm.DefaultBasicText.Println("(2) - Edit Data Employee")
 		pterm.DefaultBasicText.Println("(3) - Show All Available Employee")
 		pterm.DefaultBasicText.Println("(4) - Show All Available Employee by Department")
-		pterm.DefaultBasicText.Println("(5) - Search Available Employee by Name")
+		pterm.DefaultBasicText.Println("(5) - Search Available Employee by Username")
 		pterm.DefaultBasicText.Println("(6) - Remove Data Employee")
 
 		pterm.DefaultSection.Println("Others Available Commands?")

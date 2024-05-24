@@ -19,7 +19,8 @@ func ManageManager(menu func()) {
 		pterm.DefaultBasicText.Println("(2) - Edit Data Manager")
 		pterm.DefaultBasicText.Println("(3) - Show All Available Manager")
 		pterm.DefaultBasicText.Println("(4) - Show All Available Manager by Department")
-		pterm.DefaultBasicText.Println("(5) - Remove Data Manager")
+		pterm.DefaultBasicText.Println("(5) - Search Available Manager by Username")
+		pterm.DefaultBasicText.Println("(6) - Remove Data Manager")
 
 		pterm.DefaultSection.Println("Others Available Commands?")
 		pterm.DefaultBasicText.Println("(B) - Back")
@@ -32,13 +33,15 @@ func ManageManager(menu func()) {
 		case "1":
 			controller.CreateManager(&models.Managers, &models.NManager)
 		case "2":
-
+			controller.EditByIdManager(&models.Managers, models.NManager)
 		case "3":
 			controller.ShowAllManager(models.Managers, models.NManager)
 		case "4":
 			controller.ShowAllManagerByDepartment(models.Managers, models.NManager)
 		case "5":
-
+			controller.SearchManagerByUsername(&models.Managers, &models.NManager)
+		case "6":
+			controller.DeleteByIdManager(&models.Managers, &models.NManager)
 		case "B":
 			components.Loader(global.LoadingDuration, "Leaving Manage Manager Menu....", func() {
 				menu()

@@ -113,7 +113,7 @@ func ShowAllEmployee(employees models.Tab_Employee, t int) {
 }
 
 func ShowAllEmployeeByDepartment(employees models.Tab_Employee, t int) {
-	if t == 0 && t < 0 {
+	if t == 0 {
 		pterm.Error.Println("There's No Employee Data, Please Create The New One!")
 	} else {
 		var departments []string
@@ -209,7 +209,7 @@ func EditByIdEmployee(employees *models.Tab_Employee, t int) {
 }
 
 func DeleteByIdEmployee(employees *models.Tab_Employee, t *int) {
-	if *t == 0 && *t < 0 {
+	if *t == 0 {
 		pterm.Error.Println("There's No Employee Data, Please Create The New One!")
 	} else {
 		var Id int
