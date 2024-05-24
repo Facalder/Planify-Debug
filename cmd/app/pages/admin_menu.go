@@ -1,4 +1,4 @@
-package page
+package pages
 
 import (
 	global "github.com/Facalder/Planify"
@@ -6,13 +6,14 @@ import (
 	"github.com/pterm/pterm"
 )
 
-func MenuManager() {
-	components.TerminalBigTitle("Welcome to Manager Dashboard, Choose Command to use Functionality")
+func MenuAdmin() {
+	components.TerminalHeaderSection("Welcome to Admin Dashboard, Choose Command to use Functionality")
 
 	for {
 		pterm.DefaultSection.Println("Choose Manage Function")
-		pterm.DefaultBasicText.Println("(1) - Manage Employee")
-		pterm.DefaultBasicText.Println("(2) - Manage Task")
+		pterm.DefaultBasicText.Println("(1) - Manage Manager")
+		pterm.DefaultBasicText.Println("(2) - Manage Employee")
+		pterm.DefaultBasicText.Println("(3) - Manage Task")
 
 		pterm.DefaultSection.Println("Others Available Commands?")
 		pterm.DefaultBasicText.Println("(B) - Back")
@@ -24,17 +25,28 @@ func MenuManager() {
 		switch global.ChooseMenu {
 		case "1":
 			components.Loader(global.LoadingDuration, "Loading...", func() {
-
+				ManageManager(func() {
+					MenuAdmin()
+				})
 			})
 
 		case "2":
 			components.Loader(global.LoadingDuration, "Loading...", func() {
+				ManageEmployee(func() {
+					MenuAdmin()
+				})
+			})
 
+		case "3":
+			components.Loader(global.LoadingDuration, "Loading...", func() {
+				ManageTask(func() {
+					MenuAdmin()
+				})
 			})
 
 		case "B":
-			components.Loader(global.LoadingDuration, "Leaving Manager Menu....", func() {
-				Manager()
+			components.Loader(global.LoadingDuration, "Leaving Admin Menu....", func() {
+				Admin()
 			})
 
 		case "E":

@@ -1,4 +1,4 @@
-package page
+package pages
 
 import (
 	global "github.com/Facalder/Planify"
@@ -8,8 +8,8 @@ import (
 	"github.com/pterm/pterm"
 )
 
-func Employee() {
-	components.TerminalBigTitle("Welcome to Manager, Create account or Log in to get into Employee Dashboard")
+func Manager() {
+	components.TerminalHeaderSection("Welcome to Manager, Create account or Log in to get into Manager Dashboard")
 
 	for {
 		pterm.DefaultSection.Println("Have an account?")
@@ -27,9 +27,9 @@ func Employee() {
 
 		switch global.ChooseMenu {
 		case "1":
-			if controller.LoginEmployee(models.Employees, models.NEmployee) {
+			if controller.LoginManager(models.Managers, models.NManager) {
 				components.Loader(global.LoadingDuration, "Validating Your Data, Please Wait a Second...", func() {
-					MenuEmployee()
+					MenuManager()
 				})
 			} else {
 				components.Loader(global.ValidatingDuration, "Validating Your Data, Please Wait a Second...", func() {
@@ -37,15 +37,15 @@ func Employee() {
 				})
 			}
 		case "2":
-			if controller.RegisterEmployee(&models.Employees, &models.NEmployee) {
+			if controller.RegisterManager(&models.Managers, &models.NManager) {
 				components.Loader(global.SaveDataDuration, "Create and Save Your Data...", func() {
-					MenuEmployee()
+					MenuManager()
 				})
 			} else {
 				pterm.Error.Println("Can't Register, Please Try Again!")
 			}
 		case "B":
-			components.Loader(global.LoadingDuration, "Leaving Employee...", func() {
+			components.Loader(global.LoadingDuration, "Leaving Manager...", func() {
 				InitialMenu()
 			})
 		case "E":

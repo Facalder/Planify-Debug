@@ -1,4 +1,4 @@
-package page
+package pages
 
 import (
 	global "github.com/Facalder/Planify"
@@ -17,7 +17,7 @@ func IntroScreen() {
 		"\nIt's super easy to use!" +
 		"\nIf you want the sourcecode, hmm this project is not open source 😭" +
 		"\nYou can see the code of this demo in the " + pterm.LightMagenta("github.com/Facalder/Planify") +
-		"\nThis app was updated at: " + pterm.Green(time.Now().Format("02 Jan 2006 - 15:04:05 MST")))
+		"\nThis page was updated at: " + pterm.Green(time.Now().Format("02 Jan 2006 - 15:04:05 MST")))
 
 	components.Loader(global.InitAppDuration, "Waiting init for 3 seconds", func() {
 		InitialMenu()

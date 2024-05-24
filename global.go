@@ -3,31 +3,33 @@ package global
 const (
 	NMAX int = 40
 
-	InitAppDuration int = 5
+	InitAppDuration int = 1
 
 	LoadingDuration int = 1
 
-	ValidatingDuration int = 3
+	ValidatingDuration int = 1
 
-	RegisteringDuration int = 3
+	RegisteringDuration int = 1
 
-	SaveDataDuration int = 3
+	SearchDataDuration int = 1
 
-	GetAllDataDuration int = 3
+	SaveDataDuration int = 1
 
-	SaveOnAfterEditDuration int = 3
+	GetAllDataDuration int = 1
 
-	SaveOnAfterDeleteDuration int = 3
+	SaveOnAfterEditDuration int = 1
 
-	ExitingProgramDuration int = 3
+	SaveOnAfterDeleteDuration int = 1
 
-	ReloadingAppDuration int = 5
+	ExitingProgramDuration int = 1
+
+	ReloadingAppDuration int = 1
 )
 
 var (
 	ChooseMenu string // E - Exit, B - Back
 
-	NArray int = 1
+	NArray int = 0
 
 	IsLogin bool = false
 

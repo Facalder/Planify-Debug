@@ -1,4 +1,4 @@
-package page
+package pages
 
 import (
 	global "github.com/Facalder/Planify"
@@ -6,12 +6,13 @@ import (
 	"github.com/pterm/pterm"
 )
 
-func MenuEmployee() {
-	components.TerminalBigTitle("Welcome to Employee Dashboard, Choose Command to use Functionality")
+func MenuManager() {
+	components.TerminalHeaderSection("Welcome to Manager Dashboard, Choose Command to use Functionality")
 
 	for {
 		pterm.DefaultSection.Println("Choose Manage Function")
-		pterm.DefaultBasicText.Println("(1) - Manage Task")
+		pterm.DefaultBasicText.Println("(1) - Manage Employee")
+		pterm.DefaultBasicText.Println("(2) - Manage Task")
 
 		pterm.DefaultSection.Println("Others Available Commands?")
 		pterm.DefaultBasicText.Println("(B) - Back")
@@ -26,9 +27,14 @@ func MenuEmployee() {
 
 			})
 
+		case "2":
+			components.Loader(global.LoadingDuration, "Loading...", func() {
+
+			})
+
 		case "B":
-			components.Loader(global.LoadingDuration, "Leaving Employee Menu....", func() {
-				Employee()
+			components.Loader(global.LoadingDuration, "Leaving Manager Menu....", func() {
+				Manager()
 			})
 
 		case "E":
